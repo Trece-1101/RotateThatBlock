@@ -9,12 +9,18 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Camera2D",
+"class": "CameraLevel",
+"language": "GDScript",
+"path": "res://game/cameras/CameraLevel.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "Player",
 "language": "GDScript",
 "path": "res://game/player/Player.gd"
 } ]
 _global_script_class_icons={
+"CameraLevel": "",
 "Player": ""
 }
 
@@ -23,6 +29,15 @@ _global_script_class_icons={
 config/name="RotateThatBlock"
 run/main_scene="res://game/levels/TestLevel.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+Events="*res://game/autoloads/Events.gd"
+
+[debug]
+
+gdscript/warnings/unused_signal=false
+gdscript/warnings/return_value_discarded=false
 
 [display]
 
