@@ -13,20 +13,26 @@ func set_follow_target(value: Node2D) -> void:
 
 func _ready() -> void:
 	Events.connect("player_change_direction", self, "_on_player_change_direction")
+	Events.connect("player_died", self, "_on_player_died")
 
 func _process(_delta: float) -> void:
+	if not follow_target:
+		return
+	
 	position.x = follow_target.position.x + target_offset_h
 	position.y = follow_target.position.y + target_offset_v
 
 func _on_player_change_direction() -> void:
-#	target_offset *= 0
 	transition_h.interpolate_property(
 		self,
 		"target_offset_h",
 		target_offset_h,
 		target_offset_h * -1,
-		1.0,
+		0.8,
 		Tween.TRANS_LINEAR,
 		Tween.EASE_OUT
 	)
 	transition_h.start()
+
+func _on_player_died(_player_position: Vector2) -> void:
+	follow_target = null

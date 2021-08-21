@@ -7,17 +7,8 @@ var can_rotate = true
 onready var tween_rotation:Tween = $TweenRotation
 
 func _ready() -> void:
-	$ButtonAntiClockWise.set_as_toplevel(true)
-	$ButtonClockWise.set_as_toplevel(true)
-	$ButtonAntiClockWise.rect_global_position = global_position + Vector2(-160.0, -80.0)
-	$ButtonClockWise.rect_global_position = global_position + Vector2(8.0, -80.0)
-
-func _on_ButtonAntiClockWise_pressed() -> void:
-	smooth_rotation(-90.0)
-
-
-func _on_ButtonClockWise_pressed() -> void:
-	smooth_rotation(90.0)
+	$ButtonRotate.set_as_toplevel(true)
+	$ButtonRotate.rect_global_position = global_position + Vector2(-560.0, -560.0)
 
 
 func smooth_rotation(rot_value: float) -> void:
@@ -40,3 +31,13 @@ func smooth_rotation(rot_value: float) -> void:
 
 func _on_TweenRotation_tween_all_completed() -> void:
 	can_rotate = true
+
+
+func _on_ButtonAntiClockWise_gui_input(event: InputEvent) -> void:
+	if event.is_pressed() and can_rotate:
+		if event.button_index == BUTTON_LEFT:
+			smooth_rotation(-90.0)
+			Events.emit_signal("block_rotated", -1)
+		elif event.button_index == BUTTON_RIGHT:
+			smooth_rotation(90.0)
+			Events.emit_signal("block_rotated", 1)

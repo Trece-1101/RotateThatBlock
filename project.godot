@@ -18,10 +18,16 @@ _global_script_classes=[ {
 "class": "Player",
 "language": "GDScript",
 "path": "res://game/player/Player.gd"
+}, {
+"base": "Node2D",
+"class": "SimpleExplosion",
+"language": "GDScript",
+"path": "res://game/explosions/SimpleExplosion.gd"
 } ]
 _global_script_class_icons={
 "CameraLevel": "",
-"Player": ""
+"Player": "",
+"SimpleExplosion": ""
 }
 
 [application]
@@ -53,6 +59,7 @@ window/stretch/aspect="keep"
 
 2d_physics/layer_1="player"
 2d_physics/layer_2="world"
+2d_physics/layer_3="damage"
 
 [physics]
 

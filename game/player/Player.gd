@@ -13,6 +13,7 @@ export var level_scale:float = 1.0 setget set_level_scale
 ## ONREADY
 onready var animation:AnimatedSprite = $AnimatedSprite
 onready var wall_cooldown:Timer = $WallTouchCoolDown
+onready var enter_portal_tween:Tween = $Tween
 
 ## SETTERS Y GETTERS
 func set_level_scale(value: float) -> void:
@@ -30,6 +31,7 @@ func _ready() -> void:
 	animation.speed_scale = level_scale
 	velocity *= level_scale
 	set_physics_process(start_processing)
+	Events.connect("block_rotated", self, "_on_block_rotated")
 
 
 # warning-ignore:unused_argument
@@ -50,8 +52,8 @@ func _physics_process(delta: float) -> void:
 	if is_on_wall() and wall_cooldown.time_left == 0.0:
 		change_direction()
 		wall_cooldown.start()
-		
-	print(wall_cooldown.time_left)
+
+
 
 func set_can_process(value: bool) -> void:
 	set_process(value)
@@ -60,3 +62,33 @@ func set_can_process(value: bool) -> void:
 func change_direction() -> void:
 	move_direction *= -1
 	Events.emit_signal("player_change_direction")
+
+func _on_block_rotated(direction: int) -> void:
+	wall_cooldown.stop()
+	wall_cooldown.start()
+#	if move_direction != direction:
+#		move_direction = direction
+#		Events.emit_signal("player_change_direction")
+
+func go_to_portal(center: Vector2) -> void:
+	velocity = Vector2.ZERO
+	enter_portal_tween.interpolate_property(
+		self,
+		"global_position",
+		global_position,
+		center,
+		1.5,
+		Tween.TRANS_LINEAR,
+		Tween.EASE_IN_OUT
+	)
+	enter_portal_tween.start()
+	$AnimationPlayer.play("enter_portal")
+
+
+func _on_AnimationPlayer_animation_finished(anim_name: String) -> void:
+	if anim_name == "enter_portal":
+		Events.emit_signal("player_in_portal")
+
+func die() -> void:
+	Events.emit_signal("player_died", global_position)
+	queue_free()

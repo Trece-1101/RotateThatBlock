@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/Fonts/Kenney Future Narrow.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://game/blocks/LevelBlock.tscn" type="PackedScene" id=2]
+[ext_resource path="res://game/player/Player.tscn" type="PackedScene" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 70
+font_data = ExtResource( 1 )
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 1, 1, 1, 0.596078 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 496.0
+margin_top = 112.0
+margin_right = 708.0
+margin_bottom = 198.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+margin_right = 212.0
+margin_bottom = 86.0
+custom_fonts/font = SubResource( 1 )
+text = "Play"
+
+[node name="LevelBlock" parent="." instance=ExtResource( 2 )]
+position = Vector2( 640, 144 )
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 272, 592 )
+start_processing = true
