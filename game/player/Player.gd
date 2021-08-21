@@ -8,7 +8,7 @@ export var start_processing:bool = false
 
 ## VARS
 var move_direction:int = 1 setget set_move_direction, get_move_direction
-export var level_scale:float = 1.0 setget set_level_scale
+var level_scale:float = 1.0 setget set_level_scale
 
 ## ONREADY
 onready var animation:AnimatedSprite = $AnimatedSprite
@@ -32,7 +32,16 @@ func _ready() -> void:
 	velocity *= level_scale
 	set_physics_process(start_processing)
 	Events.connect("block_rotated", self, "_on_block_rotated")
+	Events.connect("player_ready", self, "_on_ready")
 
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("acelerate"):
+		if Engine.time_scale < 4.0:
+			Engine.time_scale += 0.5
+		return
+	elif event.is_action_pressed("deacelerate"):
+		Engine.time_scale = 1.0
+		return
 
 # warning-ignore:unused_argument
 func _physics_process(delta: float) -> void:
@@ -53,7 +62,8 @@ func _physics_process(delta: float) -> void:
 		change_direction()
 		wall_cooldown.start()
 
-
+func _on_ready() -> void:
+	set_can_process(true)
 
 func set_can_process(value: bool) -> void:
 	set_process(value)
@@ -63,7 +73,7 @@ func change_direction() -> void:
 	move_direction *= -1
 	Events.emit_signal("player_change_direction")
 
-func _on_block_rotated(direction: int) -> void:
+func _on_block_rotated(_direction: int) -> void:
 	wall_cooldown.stop()
 	wall_cooldown.start()
 #	if move_direction != direction:

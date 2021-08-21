@@ -113,12 +113,10 @@ z_index = 50
 z_as_relative = false
 collision_mask = 2
 script = ExtResource( 3 )
-velocity = Vector2( 280, 180 )
+velocity = Vector2( 300, 760 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0, -48.4157 )
-rotation = 6.28319
-scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
 animation = "idle"
 
