@@ -222,6 +222,7 @@ __meta__ = {
 }
 
 [node name="Level11" type="Button" parent="MainContainer/LevelContainer"]
+visible = false
 margin_left = 296.0
 margin_top = 120.0
 margin_right = 400.0
@@ -237,6 +238,7 @@ __meta__ = {
 }
 
 [node name="Level12" type="Button" parent="MainContainer/LevelContainer"]
+visible = false
 margin_left = 416.0
 margin_top = 120.0
 margin_right = 520.0
@@ -252,6 +254,7 @@ __meta__ = {
 }
 
 [node name="Level13" type="Button" parent="MainContainer/LevelContainer"]
+visible = false
 margin_left = 536.0
 margin_top = 120.0
 margin_right = 640.0
@@ -267,6 +270,7 @@ __meta__ = {
 }
 
 [node name="Level14" type="Button" parent="MainContainer/LevelContainer"]
+visible = false
 margin_left = 656.0
 margin_top = 120.0
 margin_right = 760.0
@@ -282,6 +286,7 @@ __meta__ = {
 }
 
 [node name="Level15" type="Button" parent="MainContainer/LevelContainer"]
+visible = false
 margin_left = 776.0
 margin_top = 120.0
 margin_right = 880.0
@@ -297,6 +302,7 @@ __meta__ = {
 }
 
 [node name="Level16" type="Button" parent="MainContainer/LevelContainer"]
+visible = false
 margin_left = 896.0
 margin_top = 120.0
 margin_right = 1000.0

@@ -33,7 +33,7 @@ _global_script_class_icons={
 [application]
 
 config/name="RotateThatBlock"
-run/main_scene="res://game/levels/Level1.tscn"
+run/main_scene="res://game/gui/menus/Intro.tscn"
 config/icon="res://icon.png"
 
 [autoload]
