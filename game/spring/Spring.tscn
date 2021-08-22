@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://game/spring/Spring.gd" type="Script" id=1]
 [ext_resource path="res://assets/Spring/spring_in.png" type="Texture" id=2]
 [ext_resource path="res://assets/Spring/spring_out.png" type="Texture" id=3]
 [ext_resource path="res://assets/Spring/spring.png" type="Texture" id=4]
+[ext_resource path="res://assets/Sounds/phaseJump5.ogg" type="AudioStream" id=5]
 
 [sub_resource type="Animation" id=1]
 resource_name = "default"
@@ -119,5 +120,9 @@ collision_layer = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector"]
 position = Vector2( 0, -7.41624 )
 shape = SubResource( 3 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 5 )
+bus = "SFX"
 
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_PlayerDetector_body_entered"]

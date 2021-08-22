@@ -39,6 +39,8 @@ __meta__ = {
 "_edit_horizontal_guides_": [ 16.0 ],
 "_edit_vertical_guides_": [ 640.437 ]
 }
+main_menu = "res://game/gui/menus/MainMenu.tscn"
+level_selection_menu = "res://game/gui/menus/LevelSelection.tscn"
 
 [node name="BtnRetry" type="Button" parent="."]
 anchor_left = 0.5

@@ -1,0 +1,347 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://assets/Fonts/Kenney Bold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/Fonts/Kenney Thick.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://game/gui/Buttons/LevelSelection.tres" type="StyleBox" id=3]
+[ext_resource path="res://game/gui/menus/LevelSelection.gd" type="Script" id=4]
+[ext_resource path="res://game/gui/Buttons/LoadLevelButton.gd" type="Script" id=5]
+[ext_resource path="res://assets/Icons/return.png" type="Texture" id=6]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0.517647, 0.796078, 1 )
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 30
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+border_width_left = 4
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 4
+border_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 1, 1, 1, 1 )
+border_width_left = 6
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 6
+border_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="DynamicFont" id=6]
+outline_size = 6
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[node name="LevelSelection" type="Node"]
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_vertical_guides_": [ 640.0 ]
+}
+main_menu = "res://game/gui/menus/MainMenu.tscn"
+
+[node name="MainContainer" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelContainer" type="ColorRect" parent="MainContainer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -528.0
+margin_top = -168.0
+margin_right = 528.0
+margin_bottom = 168.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level1" type="Button" parent="MainContainer/LevelContainer"]
+margin_left = 56.0
+margin_top = 16.0
+margin_right = 160.0
+margin_bottom = 104.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/normal = ExtResource( 3 )
+custom_fonts/font = SubResource( 2 )
+disabled = true
+text = "1"
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level2" type="Button" parent="MainContainer/LevelContainer"]
+margin_left = 176.0
+margin_top = 16.0
+margin_right = 280.0
+margin_bottom = 104.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/normal = ExtResource( 3 )
+custom_fonts/font = SubResource( 2 )
+disabled = true
+text = "2"
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level3" type="Button" parent="MainContainer/LevelContainer"]
+margin_left = 296.0
+margin_top = 16.0
+margin_right = 400.0
+margin_bottom = 104.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/normal = ExtResource( 3 )
+custom_fonts/font = SubResource( 2 )
+disabled = true
+text = "3"
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level4" type="Button" parent="MainContainer/LevelContainer"]
+margin_left = 416.0
+margin_top = 16.0
+margin_right = 520.0
+margin_bottom = 104.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/normal = ExtResource( 3 )
+custom_fonts/font = SubResource( 2 )
+disabled = true
+text = "4"
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level5" type="Button" parent="MainContainer/LevelContainer"]
+margin_left = 536.0
+margin_top = 16.0
+margin_right = 640.0
+margin_bottom = 104.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/normal = ExtResource( 3 )
+custom_fonts/font = SubResource( 2 )
+disabled = true
+text = "5"
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level6" type="Button" parent="MainContainer/LevelContainer"]
+margin_left = 656.0
+margin_top = 16.0
+margin_right = 760.0
+margin_bottom = 104.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/normal = ExtResource( 3 )
+custom_fonts/font = SubResource( 2 )
+disabled = true
+text = "6"
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level7" type="Button" parent="MainContainer/LevelContainer"]
+margin_left = 776.0
+margin_top = 16.0
+margin_right = 880.0
+margin_bottom = 104.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/normal = ExtResource( 3 )
+custom_fonts/font = SubResource( 2 )
+disabled = true
+text = "7"
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level8" type="Button" parent="MainContainer/LevelContainer"]
+margin_left = 896.0
+margin_top = 16.0
+margin_right = 1000.0
+margin_bottom = 104.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/normal = ExtResource( 3 )
+custom_fonts/font = SubResource( 2 )
+disabled = true
+text = "8"
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level9" type="Button" parent="MainContainer/LevelContainer"]
+margin_left = 56.0
+margin_top = 120.0
+margin_right = 160.0
+margin_bottom = 208.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/normal = ExtResource( 3 )
+custom_fonts/font = SubResource( 2 )
+disabled = true
+text = "9"
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level10" type="Button" parent="MainContainer/LevelContainer"]
+margin_left = 176.0
+margin_top = 120.0
+margin_right = 280.0
+margin_bottom = 208.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/normal = ExtResource( 3 )
+custom_fonts/font = SubResource( 2 )
+disabled = true
+text = "10"
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level11" type="Button" parent="MainContainer/LevelContainer"]
+margin_left = 296.0
+margin_top = 120.0
+margin_right = 400.0
+margin_bottom = 208.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/normal = ExtResource( 3 )
+custom_fonts/font = SubResource( 2 )
+disabled = true
+text = "11"
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level12" type="Button" parent="MainContainer/LevelContainer"]
+margin_left = 416.0
+margin_top = 120.0
+margin_right = 520.0
+margin_bottom = 208.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/normal = ExtResource( 3 )
+custom_fonts/font = SubResource( 2 )
+disabled = true
+text = "12"
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level13" type="Button" parent="MainContainer/LevelContainer"]
+margin_left = 536.0
+margin_top = 120.0
+margin_right = 640.0
+margin_bottom = 208.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/normal = ExtResource( 3 )
+custom_fonts/font = SubResource( 2 )
+disabled = true
+text = "13"
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level14" type="Button" parent="MainContainer/LevelContainer"]
+margin_left = 656.0
+margin_top = 120.0
+margin_right = 760.0
+margin_bottom = 208.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/normal = ExtResource( 3 )
+custom_fonts/font = SubResource( 2 )
+disabled = true
+text = "14"
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level15" type="Button" parent="MainContainer/LevelContainer"]
+margin_left = 776.0
+margin_top = 120.0
+margin_right = 880.0
+margin_bottom = 208.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/normal = ExtResource( 3 )
+custom_fonts/font = SubResource( 2 )
+disabled = true
+text = "15"
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level16" type="Button" parent="MainContainer/LevelContainer"]
+margin_left = 896.0
+margin_top = 120.0
+margin_right = 1000.0
+margin_bottom = 208.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/normal = ExtResource( 3 )
+custom_fonts/font = SubResource( 2 )
+disabled = true
+text = "16"
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="MainContainer"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -208.5
+margin_top = 72.0
+margin_right = 208.5
+margin_bottom = 118.0
+custom_fonts/font = SubResource( 3 )
+text = "Level Selection"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BtnRetry" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 280.0
+margin_top = -136.0
+margin_right = 530.0
+margin_bottom = -76.0
+custom_styles/hover = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
+text = "Return"
+icon = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="BtnRetry" to="." method="_on_BtnRetry_pressed"]

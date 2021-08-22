@@ -2,9 +2,12 @@ extends Node2D
 
 export var rotation_time:float = 1.0
 
-var can_rotate = false
+var can_rotate = false setget set_can_rotate
 
 onready var tween_rotation:Tween = $TweenRotation
+
+func set_can_rotate(value: bool) -> void:
+	can_rotate = value
 
 func _ready() -> void:
 	$ButtonRotate.set_as_toplevel(true)
@@ -51,9 +54,11 @@ func _on_ButtonAntiClockWise_gui_input(event: InputEvent) -> void:
 		if event.button_index == BUTTON_LEFT:
 			smooth_rotation(-90.0)
 			Events.emit_signal("block_rotated", -1)
+			$RotateAntiClockSound.play()
 		elif event.button_index == BUTTON_RIGHT:
 			smooth_rotation(90.0)
 			Events.emit_signal("block_rotated", 1)
+			$RotateClockSound.play()
 		else:
 			return
 

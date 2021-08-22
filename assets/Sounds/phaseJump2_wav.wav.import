@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/phaseJump2_wav.wav-cc14d8d72f000c80ca3370d09e75d829.sample"
+
+[deps]
+
+source_file="res://assets/Sounds/phaseJump2_wav.wav"
+dest_files=[ "res://.import/phaseJump2_wav.wav-cc14d8d72f000c80ca3370d09e75d829.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

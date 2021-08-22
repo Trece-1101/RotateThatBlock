@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Don't Leave(Action).ogg-a1c2e4a38462d0f408150821280b999d.oggstr"
+
+[deps]
+
+source_file="res://assets/Sounds/Don't Leave(Action).ogg"
+dest_files=[ "res://.import/Don't Leave(Action).ogg-a1c2e4a38462d0f408150821280b999d.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

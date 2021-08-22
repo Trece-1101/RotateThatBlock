@@ -14,6 +14,8 @@ func _on_SwitchDetector_body_entered(body: Node) -> void:
 	else:
 		$AnimationPlayer.play("activate_left")
 	
+	$SwitchSound.play()
+	
 	$SwitchDetector/CollisionShape2D.set_deferred("disabled", true)
 
 
@@ -24,3 +26,5 @@ func _on_AnimationPlayer_animation_finished(anim_name: String) -> void:
 			$AnimationPlayer.play("open_door")
 		else:
 			$AnimationPlayer.play("close_door")
+		
+		$DoorSound.play()

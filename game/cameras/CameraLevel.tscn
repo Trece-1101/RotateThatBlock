@@ -59,10 +59,10 @@ position = Vector2( 1150.35, -595.355 )
 z_index = 100
 z_as_relative = false
 current = true
-zoom = Vector2( 2, 2 )
+zoom = Vector2( 3, 3 )
 script = ExtResource( 1 )
-target_offset_h = 800.0
-target_offset_v = -400.0
+target_offset_h = 600.0
+target_offset_v = -100.0
 
 [node name="TweenTransitionH" type="Tween" parent="."]
 
