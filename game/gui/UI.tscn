@@ -7,7 +7,7 @@
 [ext_resource path="res://assets/Icons/menuList.png" type="Texture" id=5]
 [ext_resource path="res://assets/Icons/menuGrid.png" type="Texture" id=6]
 
-[sub_resource type="StyleBoxFlat" id=5]
+[sub_resource type="StyleBoxFlat" id=1]
 border_width_left = 4
 border_width_top = 6
 border_width_right = 6
@@ -45,11 +45,11 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = 400.0
-margin_top = -710.592
-margin_right = 460.0
-margin_bottom = -650.592
-custom_styles/hover = SubResource( 5 )
+margin_left = -637.064
+margin_top = -61.7072
+margin_right = -577.064
+margin_bottom = -1.70715
+custom_styles/hover = SubResource( 1 )
 custom_styles/normal = SubResource( 2 )
 custom_fonts/font = SubResource( 3 )
 icon = ExtResource( 3 )
@@ -62,11 +62,11 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = 464.0
-margin_top = -710.592
-margin_right = 524.0
-margin_bottom = -650.592
-custom_styles/hover = SubResource( 5 )
+margin_left = -573.064
+margin_top = -61.7072
+margin_right = -513.064
+margin_bottom = -1.70715
+custom_styles/hover = SubResource( 1 )
 custom_styles/normal = SubResource( 2 )
 custom_fonts/font = SubResource( 3 )
 icon = ExtResource( 5 )
@@ -79,11 +79,11 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = 528.0
-margin_top = -710.592
-margin_right = 588.0
-margin_bottom = -650.592
-custom_styles/hover = SubResource( 5 )
+margin_left = -509.064
+margin_top = -61.7072
+margin_right = -449.064
+margin_bottom = -1.70715
+custom_styles/hover = SubResource( 1 )
 custom_styles/normal = SubResource( 2 )
 custom_fonts/font = SubResource( 3 )
 icon = ExtResource( 6 )

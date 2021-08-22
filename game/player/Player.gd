@@ -9,6 +9,7 @@ export var start_processing:bool = false
 ## VARS
 var move_direction:int = 1 setget set_move_direction, get_move_direction
 var level_scale:float = 1.0 setget set_level_scale
+var original_velocity:Vector2 = Vector2.ZERO
 
 ## ONREADY
 onready var animation:AnimatedSprite = $AnimatedSprite
@@ -30,6 +31,7 @@ func _ready() -> void:
 	animation.play("idle")
 	animation.speed_scale = level_scale
 	velocity *= level_scale
+	original_velocity = velocity
 	set_physics_process(start_processing)
 	Events.connect("block_rotated", self, "_on_block_rotated")
 	Events.connect("player_ready", self, "_on_ready")
@@ -99,6 +101,14 @@ func _on_AnimationPlayer_animation_finished(anim_name: String) -> void:
 	if anim_name == "enter_portal":
 		Events.emit_signal("player_in_portal")
 
+func impulse() -> void:
+	velocity.y = -800
+	$ImpulseCoolDown.start()
+
 func die() -> void:
 	Events.emit_signal("player_died", global_position)
 	queue_free()
+
+
+func _on_ImpulseCoolDown_timeout() -> void:
+	velocity = original_velocity

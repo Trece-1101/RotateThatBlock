@@ -135,4 +135,8 @@ autoplay = "default"
 anims/default = SubResource( 3 )
 anims/enter_portal = SubResource( 4 )
 
+[node name="ImpulseCoolDown" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="timeout" from="ImpulseCoolDown" to="." method="_on_ImpulseCoolDown_timeout"]

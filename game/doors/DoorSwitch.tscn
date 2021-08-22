@@ -6,13 +6,13 @@
 [ext_resource path="res://assets/Items/switchGreen_left.png" type="Texture" id=4]
 [ext_resource path="res://game/doors/DoorSwitch.gd" type="Script" id=5]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 13.6879, 56.5 )
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 64, 96 )
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=3]
 resource_name = "activate_left"
 length = 0.1
 tracks/0/type = "value"
@@ -92,7 +92,7 @@ tracks/2/keys = {
 "values": [ false, true ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=5]
 resource_name = "close_door"
 length = 0.5
 tracks/0/type = "value"
@@ -108,8 +108,7 @@ tracks/0/keys = {
 "values": [ Vector2( 0, -192 ), Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "default_close"
+[sub_resource type="Animation" id=6]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/path = NodePath("SwitchDetector/Sprites/SwitchOnLeft:visible")
@@ -160,8 +159,7 @@ tracks/3/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=6]
-resource_name = "default_open"
+[sub_resource type="Animation" id=7]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/path = NodePath("SwitchDetector/Sprites/SwitchOnLeft:visible")
@@ -264,7 +262,7 @@ texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SwitchDetector"]
 position = Vector2( 0, -8.5 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="DoorFrame" type="Node2D" parent="."]
 
@@ -300,14 +298,14 @@ position = Vector2( 32, 64 )
 texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorFrame/Door"]
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/activate_left = SubResource( 5 )
+anims/activate_left = SubResource( 3 )
 anims/activate_right = SubResource( 4 )
-anims/close_door = SubResource( 7 )
-anims/default_close = SubResource( 3 )
-anims/default_open = SubResource( 6 )
+anims/close_door = SubResource( 5 )
+anims/default_close = SubResource( 6 )
+anims/default_open = SubResource( 7 )
 anims/open_door = SubResource( 8 )
 
 [connection signal="body_entered" from="SwitchDetector" to="." method="_on_SwitchDetector_body_entered"]
