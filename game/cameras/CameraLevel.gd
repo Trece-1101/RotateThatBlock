@@ -12,6 +12,7 @@ var wait_time:int = 3
 
 ## ONREADYS
 onready var transition_h:Tween = $TweenTransitionH
+onready var transition_v:Tween = $TweenTransitionV
 
 ## SETTERS Y GETTERS
 func set_follow_target(value: Node2D) -> void:
@@ -26,10 +27,11 @@ func _ready() -> void:
 	Events.connect("player_change_direction", self, "_on_player_change_direction")
 	Events.connect("player_died", self, "_on_player_died")
 	Events.connect("player_in_portal", self, "_on_player_in_portal")
+	Events.connect("see_below", self, "_on_see_below")
 	update_time_label()
 	$AnimationPlayer.play("fade_out")
 
-func _process(_delta: float) -> void:	
+func _process(_delta: float) -> void:
 	if not follow_target:
 		return
 	
@@ -47,6 +49,18 @@ func _on_player_change_direction() -> void:
 		Tween.EASE_OUT
 	)
 	transition_h.start()
+
+func _on_see_below() -> void:
+	transition_v.interpolate_property(
+		self,
+		"target_offset_v",
+		target_offset_v,
+		-target_offset_v,
+		0.4,
+		Tween.TRANS_LINEAR,
+		Tween.EASE_IN_OUT
+	)
+	transition_v.start()
 
 func _on_player_died(_player_position: Vector2) -> void:
 	follow_target = null
@@ -68,7 +82,6 @@ func _on_player_in_portal() -> void:
 
 func _on_Timer_timeout() -> void:
 	update_time_label()
-
 
 func _on_AnimationPlayer_animation_finished(anim_name: String) -> void:
 	if anim_name == "fade_in":

@@ -6,3 +6,4 @@ func _ready() -> void:
 
 func _on_AnimatedSprite_animation_finished() -> void:
 	queue_free()
+	get_tree().reload_current_scene()

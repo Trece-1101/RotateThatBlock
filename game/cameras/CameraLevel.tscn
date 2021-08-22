@@ -66,6 +66,8 @@ target_offset_v = -400.0
 
 [node name="TweenTransitionH" type="Tween" parent="."]
 
+[node name="TweenTransitionV" type="Tween" parent="."]
+
 [node name="Label" type="Label" parent="."]
 visible = false
 anchor_left = 0.5

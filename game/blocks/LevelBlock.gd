@@ -8,7 +8,9 @@ onready var tween_rotation:Tween = $TweenRotation
 
 func _ready() -> void:
 	$ButtonRotate.set_as_toplevel(true)
-	$ButtonRotate.rect_global_position = global_position + Vector2(-560.0, -560.0)
+	$ButtonRotate.rect_global_position = global_position + Vector2(-453.0, -453.0)
+	$SeeBelowButton.set_as_toplevel(true)
+	$SeeBelowButton.rect_global_position = global_position + Vector2(-560.0, 455.0)
 	Events.connect("player_ready", self, "_on_player_ready")
 
 func _on_player_ready() -> void:
@@ -54,3 +56,7 @@ func _on_ButtonAntiClockWise_gui_input(event: InputEvent) -> void:
 			Events.emit_signal("block_rotated", 1)
 		else:
 			return
+
+
+func _on_SeeBelowButton_mouse_entered() -> void:
+	Events.emit_signal("see_below")
