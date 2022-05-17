@@ -7,6 +7,8 @@ You better start rotating es un juego de plataformas y puzzles donde el objetivo
 Lo especial es que no tienes el control del personaje, solo de la rotación cuartos/habitaciones que conforman cada nivel. Tu personaje puede rebotar por las paredes para cambiar su dirección.
 Rota con cuidado porque un giro en falso --> Game Over
 El juego fue realizado en el marco de la [Kenney Jam 2021](https://itch.io/jam/kenney-jam-2021) en un lapso de 48 hs. El tema era "Rotation" y solo podian utilizarse assets de [Kenney](https://www.kenney.nl/assets).
+
+### Podes jugarlo en tu navegador haciendo clic [aca](https://cleric13.itch.io/you-better-start-rotating)
 ***
 ***Engine:*** Godot v3.3.2
 
